@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · sf-t3-1779642675702-315</title>
+  <meta name="description" content="sf-t3-1779642675702-315에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-315.maphoshirts.today/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* ----- RESET / BASE ----- */
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+ }
+ body {
+ font-family: 'Courier New', Courier, monospace;
+ background: #0a0a0f;
+ color: #e0e0e0;
+ line-height: 1.6;
+ border-left: 4px solid #00ffc8;
+ border-right: 4px solid #ff00c8;
+ min-height: 100vh;
+ padding: 0 1rem;
+ }
+ /* ----- FULL BLEED / SPACING SYSTEM ----- */
+ header, main, footer, section {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 2rem 0;
+ }
+ section {
+ border-bottom: 1px dashed #333;
+ }
+ section + section {
+ margin-top: 3rem;
+ }
+ /* ----- BRUTALIST ELEMENTS ----- */
+ h1, h2, h3, h4 {
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ color: #fff;
+ }
+ h1 {
+ font-size: 3rem;
+ border-left: 8px solid #ff00c8;
+ padding-left: 1rem;
+ margin-bottom: 1.5rem;
+ text-shadow: 3px 3px 0 #00ffc8;
+ }
+ h2 {
+ font-size: 2rem;
+ border-bottom: 4px solid #ff00c8;
+ padding-bottom: 0.5rem;
+ margin-bottom: 1.5rem;
+ }
+ p, li {
+ font-size: 1.125rem;
+ margin-bottom: 1rem;
+ color: #ccc;
+ }
+ a {
+ color: #00ffc8;
+ text-decoration: none;
+ border-bottom: 2px solid transparent;
+ transition: border-color 0.2s;
+ }
+ a:hover {
+ border-bottom-color: #00ffc8;
+ }
+ ul {
+ list-style: none;
+ padding-left: 0;
+ }
+ ul li::before {
+ content: "◈ ";
+ color: #ff00c8;
+ }
+ hr {
+ border: none;
+ border-top: 2px dashed #ff00c8;
+ margin: 2rem 0;
+ }
+ /* ----- NEON VOID ACCENTS ----- */
+ .highlight {
+ background: linear-gradient(135deg, #00ffc8, #ff00c8);
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+ font-weight: bold;
+ }
+ .card {
+ background: #12121a;
+ border: 1px solid #222;
+ padding: 1.5rem;
+ margin-bottom: 1.5rem;
+ box-shadow: 8px 8px 0 rgba(0, 255, 200, 0.2);
+ transition: box-shadow 0.3s, transform 0.3s;
+ }
+ .card:hover {
+ box-shadow: 12px 12px 0 rgba(255, 0, 200, 0.3);
+ transform: translate(-2px, -2px);
+ }
+ .card h3 {
+ font-size: 1.5rem;
+ color: #00ffc8;
+ margin-bottom: 0.75rem;
+ }
+ .card p {
+ font-size: 1rem;
+ }
+ .btn {
+ display: inline-block;
+ background: #ff00c8;
+ color: #0a0a0f;
+ padding: 0.75rem 1.5rem;
+ font-weight: bold;
+ text-transform: uppercase;
+ border: none;
+ cursor: pointer;
+ transition: background 0.3s, color 0.3s;
+ box-shadow: 4px 4px 0 #00ffc8;
+ }
+ .btn:hover {
+ background: #00ffc8;
+ color: #0a0a0f;
+ box-shadow: 4px 4px 0 #ff00c8;
+ }
+ /* ----- NAVIGATION (common) ----- */
+ nav.nav-present {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 1rem 0;
+ border-bottom: 2px solid #00ffc8;
+ margin-bottom: 2rem;
+ }
+ nav.nav-present .logo {
+ font-size: 1.5rem;
+ font-weight: bold;
+ color: #fff;
+ text-transform: uppercase;
+ }
+ nav.nav-present .logo span {
+ color: #ff00c8;
+ }
+ nav.nav-present ul {
+ display: flex;
+ gap: 1.5rem;
+ list-style: none;
+ margin: 0;
+ }
+ nav.nav-present ul li::before {
+ content: none;
+ }
+ nav.nav-present ul li a {
+ color: #e0e0e0;
+ font-weight: bold;
+ text-transform: uppercase;
+ font-size: 0.9rem;
+ border-bottom: 2px solid transparent;
+ }
+ nav.nav-present ul li a:hover,
+ nav.nav-present ul li a.active {
+ border-bottom-color: #ff00c8;
+ color: #00ffc8;
+ }
+ /* hamburger menu (responsive) */
+ .hamburger-menu {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ gap: 5px;
+ }
+ .hamburger-menu span {
+ width: 28px;
+ height: 3px;
+ background: #e0e0e0;
+ transition: all 0.3s;
+ }
+ @media (max-width: 768px) {
+ body {
+ padding: 0 0.5rem;
+ border-left-width: 2px;
+ border-right-width: 2px;
+ }
+ h1 {
+ font-size: 2rem;
+ }
+ h2 {
+ font-size: 1.5rem;
+ }
+ nav.nav-present ul {
+ display: none;
+ flex-direction: column;
+ background: #0a0a0f;
+ position: absolute;
+ top: 70px;
+ left: 0;
+ right: 0;
+ padding: 1rem;
+ border-bottom: 2px solid #ff00c8;
+ z-index: 100;
+ }
+ nav.nav-present ul.open {
+ display: flex;
+ }
+ .hamburger-menu {
+ display: flex;
+ }
+ nav.nav-present {
+ position: relative;
+ }
+ .responsive-768 nav ul {
+ display: flex; 
+ /* fallback: 기본은 flex, 작은 화면에서는 js로 토글 */
+ }
+ }
+ /* tel-link */
+ .tel-link {
+ color: #00ffc8;
+ font-weight: bold;
+ font-size: 1.2rem;
+ border: 2px solid #ff00c8;
+ padding: 0.25rem 0.75rem;
+ }
+ .tel-link:hover {
+ background: #ff00c8;
+ color: #0a0a0f;
+ }
+ /* FAQ */
+ .faq-item {
+ border-bottom: 1px dashed #333;
+ padding: 1rem 0;
+ }
+ .faq-item:last-child {
+ border-bottom: none;
+ }
+ .faq-question {
+ font-weight: bold;
+ color: #fff;
+ cursor: pointer;
+ margin-bottom: 0.5rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .faq-question::after {
+ content: "+";
+ font-size: 1.5rem;
+ color: #ff00c8;
+ }
+ .faq-answer {
+ max-height: 0;
+ overflow: hidden;
+ transition: max-height 0.3s ease;
+ color: #bbb;
+ }
+ .faq-item.active .faq-answer {
+ max-height: 200px;
+ margin-top: 0.5rem;
+ }
+ .faq-item.active .faq-question::after {
+ content: "−";
+ }
+ /* ----- RESPONSIVE GRID (if needed) ----- */
+ .grid-2 {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 1.5rem;
+ }
+ @media (max-width: 768px) {
+ .grid-2 {
+ grid-template-columns: 1fr;
+ }
+ }
+ /* footer */
+ footer {
+ border-top: 2px solid #ff00c8;
+ padding-top: 1.5rem;
+ text-align: center;
+ font-size: 0.9rem;
+ color: #555;
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · sf-t3-1779642675702-315">
+  <meta property="og:description" content="sf-t3-1779642675702-315에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-315.maphoshirts.today/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <nav class="nav-present" id="mainNav">
+ <div class="logo"><span>◈</span> 네온 보이드</div>
+ <div class="hamburger-menu" onclick="toggleNav()">
+ 
+ 
+ 
+ </div>
+ <ul id="navLinks">
+ <li><a href="/">홈</a></li>
+ <li><a href="/about">정보</a></li>
+ <li><a href="/services">서비스</a></li>
+ <li><a href="/contact" class="active">문의</a></li>
+ </ul>
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0124.html">백링크 대행 사이트 비교로 보는 마포 코인노래방 방음 시설 비교 가이드</a>
+        <p class="post-item__summary">여러분은 노래방을 선택할 때 무엇을 가장 중요하게 생각하시나요? 많은 이들이 곡 수나 가격을 따지지만, 사실 쾌적한 시간을 좌우하는 것은 소음 진동 저감 기술이 적용된 방음 시설입니다. 백링크 대행</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0309.html">백링크 대행 사이트 활용하듯 꼼꼼히 따져보는 공덕 가라오케 추천정보</a>
+        <p class="post-item__summary">온라인에서 정보의 옥석을 가려내는 일은 마치 백링크 대행 사이트에서 광고주의 신뢰도를 분석하는 과정과 흡사합니다. 공덕 지역에서 적합한 유흥 공간을 찾을 때도 무분별한 광고성 글에 휘둘리지 않는 체</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0310.html">백링크 대행 사이트 비교처럼 신중한 상수 마사지 추천정보 선택법</a>
+        <p class="post-item__summary">신뢰할 만한 백링크 대행 사이트를 선정하는 과정에서 여러 업체의 견적을 비교하듯, 건강을 위한 마사지숍 선택 역시 꼼꼼한 대조가 필요합니다. 상수 지역에는 수많은 숍이 성업 중이며, 각기 다른 컨셉</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0311.html">백링크 대행 사이트 고르듯 체크해야 할 망원 노래방 추천정보 예약</a>
+        <p class="post-item__summary">많은 이들이 백링크 대행 사이트를 선정할 때 충분한 조사 없이 진행했다가 낭패를 보곤 합니다. 노래방 방문 역시 마찬가지로, 사전에 실패 지점을 짚어보지 않으면 즐거운 시간이 불쾌한 경험으로 변할 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0312.html">백링크 대행 사이트 점검하듯 살펴보는 홍대 노래방 추천정보 핵심 항목</a>
+        <p class="post-item__summary">마치 백링크 대행 사이트가 안정적인 트래픽을 유도하기 위해 다각도로 점검을 수행하듯, 홍대 노래방 선택에도 철저한 항목별 체크리스트가 필요합니다. 홍대는 유동 인구가 많고 밀집 지역이기에 이동 편의</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0313.html">백링크 대행 사이트 활용하듯 전략적인 공덕 셔츠룸 추천정보 탐색법</a>
+        <p class="post-item__summary">오피스 밀집 지역에서 갑작스러운 회식이나 비즈니스 접대 자리가 마련되면 당황하기 마련입니다. 특히 처음 방문하는 장소라면 어디가 적합한지 판단하기 어렵고, 검증되지 않은 곳을 선택했다가 낭패를 보는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0314.html">백링크 대행 사이트처럼 효율적인 연남 유흥 추천정보 확인하는 방법</a>
+        <p class="post-item__summary">많은 이들이 연남 유흥 문화가 무조건 밤늦은 시간에만 활성화된다고 오해하곤 합니다. 하지만 실제로 지역의 분위기를 파악해보면 각 시간대마다 매력적인 요소가 다르다는 점을 알 수 있습니다. 백링크 대</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0315.html">백링크 대행 사이트 찾듯 꼼꼼하게 따져보는 마곡 가라오케 추천정보</a>
+        <p class="post-item__summary">쾌적한 환경, 합리적인 비용, 그리고 적절한 서비스까지 이 세 가지 조건을 모두 충족하는 장소를 찾기란 쉬운 일이 아닙니다. 마치 좋은 결과를 내기 위해 백링크 대행 사이트의 성과를 꼼꼼히 검토하는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0316.html">백링크 대행 사이트 신뢰도 분석처럼 철저한 마곡 유흥 추천정보 비교</a>
+        <p class="post-item__summary">당신은 유흥 업소를 선택할 때 무엇을 가장 중요하게 생각하십니까? 가격의 합리성, 서비스의 질, 아니면 접근성입니까? 백링크 대행 사이트가 검색 결과에서 노출되듯, 우리 주변의 유흥 정보도 선택의 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0317.html">백링크 대행 사이트 이용자들을 위한 합정 노래방 추천정보</a>
+        <p class="post-item__summary">디지털 환경에서 검색 최적화를 위해 백링크 대행 사이트 기술을 살피는 이들이 많아지고 있습니다. 이와 마찬가지로 오프라인 장소를 찾을 때도 정보의 신뢰도를 판별하는 과정이 중요합니다. 합정 지역의 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0318.html">백링크 대행 사이트 마케터가 분석한 연남 클럽 추천정보</a>
+        <p class="post-item__summary">웹 생태계의 백링크 대행 사이트 전략을 분석하다 보면 자연스럽게 정보의 효율성에 주목하게 됩니다. 이는 유흥 문화를 즐기는 연남 지역 클럽을 선택할 때도 동일하게 적용되는 원리입니다. 단순히 유명한</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0319.html">백링크 대행 사이트 담당자가 경고하는 합정 셔츠룸 추천정보</a>
+        <p class="post-item__summary">온라인 마케팅 시장에서 백링크 대행 사이트 활용이 잘못되면 신뢰도를 잃는 것과 같습니다. 마찬가지로 합정 지역의 셔츠룸을 찾을 때도 사전 조사 없이 무작정 방문하면 실패할 확률이 높습니다. 많은 이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-002-qfz5do.html">백링크 대행 사이트에 관한 흔한 오해, 직접 확인해보니 달랐던 점</a>
+        <p class="post-item__summary">온라인 마케팅 시장에서 백링크 대행 사이트는 오랫동안 신비로운 영역으로 여겨져 왔습니다. 많은 사업자가 이 서비스를 이용하면 단기간에 검색 결과 상위에 노출될 수 있다는 기대를 품곤 합니다. 그러나</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
